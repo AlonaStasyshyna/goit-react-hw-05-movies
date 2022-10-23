@@ -8,10 +8,14 @@ export const MovieItemInfo = () => {
       <p>Additional information</p>
       <ul>
         <li>
-          <Link to="cast" state={location.state}>Cast</Link>
+          <Link to="cast" state={location.state}>
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to="reviews" state={location.state}>Reviews</Link>
+          <Link to="reviews" state={location.state}>
+            Reviews
+          </Link>
         </li>
       </ul>
     </div>

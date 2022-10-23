@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const MovieItemCard = ({ poster, title, rating, overview, genres }) => {
   const ratingPercentage = Math.round(rating * 10);
 
@@ -21,14 +23,24 @@ export const MovieItemCard = ({ poster, title, rating, overview, genres }) => {
         <p>{overview}</p>
 
         <h4>Genres</h4>
-        <ul>
-          {genres ? (
-            genres.map(({ id, name }) => <li key={id}>{name}</li>)
-          ) : (
-            <p>No information about genres.</p>
-          )}
-        </ul>
+        {genres ? (
+          <ul>
+            {genres.map(({ id, name }) => (
+              <li key={id}>{name}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>No information about genres.</p>
+        )}
       </div>
     </div>
   );
+};
+
+MovieItemCard.propTypes = {
+  poster: PropTypes.string,
+  title: PropTypes.string,
+  rating: PropTypes.number,
+  overview: PropTypes.string,
+  genres: PropTypes.array,
 };

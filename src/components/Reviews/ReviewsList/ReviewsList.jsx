@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const ReviewsList = ({ reviews: { results } }) => {
   return (
     <>
@@ -15,4 +17,8 @@ export const ReviewsList = ({ reviews: { results } }) => {
       )}
     </>
   );
+};
+
+ReviewsList.propTypes = {
+  reviews: PropTypes.object,
 };

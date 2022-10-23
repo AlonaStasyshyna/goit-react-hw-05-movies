@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const ActorsList = ({ actors: { cast } }) => {
   return (
     <>
@@ -24,4 +26,8 @@ export const ActorsList = ({ actors: { cast } }) => {
       )}
     </>
   );
+};
+
+ActorsList.propTypes = {
+  actors: PropTypes.object,
 };
