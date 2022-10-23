@@ -1,4 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { InfoList, InfoLink } from './MovieItemInfo.styled';
 
 export const MovieItemInfo = () => {
   const location = useLocation();
@@ -6,18 +7,18 @@ export const MovieItemInfo = () => {
   return (
     <div>
       <p>Additional information</p>
-      <ul>
+      <InfoList>
         <li>
-          <Link to="cast" state={location.state}>
+          <InfoLink to="cast" state={location.state}>
             Cast
-          </Link>
+          </InfoLink>
         </li>
         <li>
-          <Link to="reviews" state={location.state}>
+          <InfoLink to="reviews" state={location.state}>
             Reviews
-          </Link>
+          </InfoLink>
         </li>
-      </ul>
+      </InfoList>
     </div>
   );
 };

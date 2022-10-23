@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
+import { List, Actor } from './ActorsList.styled';
 
 export const ActorsList = ({ actors: { cast } }) => {
   return (
     <>
       {cast.length ? (
-        <ul>
+        <List>
           {cast.map(({ id, profile_path: profile, name, character }) => (
-            <li key={id}>
+            <Actor key={id}>
               <img
                 src={
                   profile
@@ -16,11 +17,14 @@ export const ActorsList = ({ actors: { cast } }) => {
                 alt={name}
                 width="64px"
               />
-              <p>{name}</p>
-              <p>Character: {character}</p>
-            </li>
+
+              <div>
+                <p>{name}</p>
+                <p>Character: {character}</p>
+              </div>
+            </Actor>
           ))}
-        </ul>
+        </List>
       ) : (
         <p>No actors to show.</p>
       )}

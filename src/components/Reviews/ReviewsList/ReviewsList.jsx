@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
+import { List } from './ReviewsList.styled';
 
 export const ReviewsList = ({ reviews: { results } }) => {
   return (
     <>
       {results.length ? (
-        <ul>
+        <List>
           {results.map(({ id, author, content }) => (
             <li key={id}>
               <h4>Author: {author}</h4>
               <p>{content}</p>
             </li>
           ))}
-        </ul>
+        </List>
       ) : (
         <p>No reviews to show.</p>
       )}

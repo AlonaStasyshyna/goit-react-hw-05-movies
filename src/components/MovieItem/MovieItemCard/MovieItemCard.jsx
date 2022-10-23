@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { Card, Description, Genres } from './MovieItemCard.styled';
 
 export const MovieItemCard = ({ poster, title, rating, overview, genres }) => {
   const ratingPercentage = Math.round(rating * 10);
 
   return (
-    <div>
+    <Card>
       <img
         src={
           poster
@@ -13,9 +14,10 @@ export const MovieItemCard = ({ poster, title, rating, overview, genres }) => {
         }
         alt={title}
         width="150px"
+        height="225px"
       />
 
-      <div>
+      <Description>
         <h2>{title}</h2>
         <p>User score: {ratingPercentage}%</p>
 
@@ -24,16 +26,16 @@ export const MovieItemCard = ({ poster, title, rating, overview, genres }) => {
 
         <h4>Genres</h4>
         {genres ? (
-          <ul>
+          <Genres>
             {genres.map(({ id, name }) => (
               <li key={id}>{name}</li>
             ))}
-          </ul>
+          </Genres>
         ) : (
           <p>No information about genres.</p>
         )}
-      </div>
-    </div>
+      </Description>
+    </Card>
   );
 };
 
