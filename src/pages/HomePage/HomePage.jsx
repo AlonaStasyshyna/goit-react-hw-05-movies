@@ -3,7 +3,7 @@ import { fetchTrendingMovies } from 'fetchApi/fetchApi';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { Loader } from 'components/Loader/Loader';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -25,3 +25,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;

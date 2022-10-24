@@ -5,27 +5,27 @@ import { Loader } from 'components/Loader/Loader';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { fetchSearchMovie } from 'fetchApi/fetchApi';
 
-export const MoviesPage = () => {
+const MoviesPage = () => {
   const [searchMovies, setSearchMovies] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-    const [searchParams, setSearchParams] = useSearchParams();
-    
-    const query = searchParams.get('query');
+  const [searchParams, setSearchParams] = useSearchParams();
 
-    useEffect(() => {
-      if (query) {
-        setIsLoading(true);
+  const query = searchParams.get('query');
 
-        fetchSearchMovie(query)
-          .then(setSearchMovies)
-          .catch(setError)
-          .finally(setIsLoading(false));
-      }
+  useEffect(() => {
+    if (query) {
+      setIsLoading(true);
 
-      <p>Enter data to search for movies.</p>;
-    }, [query]);
+      fetchSearchMovie(query)
+        .then(setSearchMovies)
+        .catch(setError)
+        .finally(setIsLoading(false));
+    }
+
+    <p>Enter data to search for movies.</p>;
+  }, [query]);
 
   const handleSubmit = searchQuery => {
     setSearchParams({ query: searchQuery });
@@ -41,3 +41,5 @@ export const MoviesPage = () => {
     </>
   );
 };
+
+export default MoviesPage;

@@ -4,7 +4,7 @@ import { fetchMovieById } from 'fetchApi/fetchApi';
 import { Loader } from 'components/Loader/Loader';
 import { ReviewsList } from './ReviewsList/ReviewsList';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -28,3 +28,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;

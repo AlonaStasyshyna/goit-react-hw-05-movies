@@ -4,12 +4,12 @@ import { fetchMovieById } from 'fetchApi/fetchApi';
 import { Loader } from 'components/Loader/Loader';
 import { ActorsList } from './ActorsList/ActorsList';
 
-export const Cast = () => {
+const Cast = () => {
   const [actors, setActors] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-    const { movieId } = useParams();
+  const { movieId } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
@@ -28,3 +28,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;
